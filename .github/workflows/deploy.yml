@@ -31,5 +31,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: main  # Deploy to the main branch
-          folder: dist  # Path to your build directory
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist  # Path to your build directory
+          branch: gh-pages  # Deploy to the gh-pages branch
