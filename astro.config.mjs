@@ -5,6 +5,11 @@ import compressor from "astro-compressor";
 import starlight from "@astrojs/starlight";
 
 export default defineConfig({
+  content: {
+    collections: {
+      blog: './src/content/blog',  // Path to your blog posts
+    },
+  },
   site: "https://mario-guerra.github.io",
   base: '/marioguerra.xyz/',
   prefetch: true,
@@ -12,7 +17,7 @@ export default defineConfig({
     tailwind(),
     sitemap(),
     starlight({
-      title: "ScrewFast Docs",
+      title: "Mario Guerra",
       sidebar: [
         {
           label: "Quick Start Guides",
@@ -35,10 +40,10 @@ export default defineConfig({
         },
       ],
       social: {
-        github: "https://github.com/mearashadowfax/ScrewFast",
+        github: "https://github.com/mario-guerra/",
       },
       disable404Route: true,
-      favicon: "/favicon.ico",
+      favicon: "/mario-initial.svg",
       customCss: ["./src/assets/styles/starlight.css"],
     }),
     compressor({ brotli: true }),

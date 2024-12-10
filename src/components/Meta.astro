@@ -1,8 +1,7 @@
 ---
 import { getImage } from "astro:assets";
 import { OG, SEO, SITE } from "@data/constants";
-import faviconSvgSrc from "@images/icon.svg";
-import faviconSrc from "@images/icon.png";
+import faviconSvgSrc from "@images/mario-initial.svg";
 
 // Default properties for the Meta component. These values are used if props are not provided.
 // 'meta' sets a default description meta tag to describe the page content.
@@ -67,10 +66,10 @@ const faviconSvg = await getImage({
 });
 
 const appleTouchIcon = await getImage({
-  src: faviconSrc,
+  src: faviconSvgSrc,
   width: 180,
   height: 180,
-  format: "png",
+  format: "svg",
 });
 ---
 

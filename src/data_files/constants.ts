@@ -1,12 +1,12 @@
 import ogImageSrc from "@images/social.png";
 
 export const SITE = {
-  title: "ScrewFast",
-  tagline: "Top-quality Hardware Tools",
-  description: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs. Start exploring and contact our sales team for superior quality and reliability.",
-  description_short: "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
-  url: "https://screwfast.uk",
-  author: "Emil Gulamov",
+  title: "Mario Guerra",
+  tagline: "Product Manager",
+  description: "Product Manager for TypeSpec at Microsoft, specializing in increasing developer productivity through generative AI, modern build tools, and industry best practices.",
+  description_short: "Product Manager at Microsoft, enhancing developer productivity with generative AI, modern tools, and best practices.",
+  url: "https://marioguerra.xyz",
+  author: "Mario Guerra",
 };
 
 export const SEO = {

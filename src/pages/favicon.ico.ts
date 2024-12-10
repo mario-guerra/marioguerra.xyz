@@ -3,7 +3,7 @@ import sharp from "sharp";
 import ico from "sharp-ico";
 import path from "node:path";
 
-const faviconSrc = path.resolve("src/images/icon.png");
+const faviconSrc = path.resolve("src/images/mario-initial.svg");
 
 export const GET: APIRoute = async () => {
 
@@ -14,7 +14,7 @@ export const GET: APIRoute = async () => {
     sizes.map(async (size) => {
       return await sharp(faviconSrc)
         .resize(size)
-        .toFormat("png")
+        //.toFormat("svg")
         .toBuffer();
     })
   );
