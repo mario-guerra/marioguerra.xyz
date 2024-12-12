@@ -10,6 +10,7 @@ tags:
   - "future of work"
   - "job search"
   - "remote work"
+slug: "finding-remote-work-in-the-2020s"
 ---
 
 Are you interested in landing a remote work job in the 2020s? So was I. After 20+ years working as a software engineer in a typical office environment, I wanted to make some big changes.

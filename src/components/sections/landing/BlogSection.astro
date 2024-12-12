@@ -1,8 +1,9 @@
 ---
 import { getCollection } from 'astro:content';
 
-// Use getCollection to load the blog posts dynamically from the src/content/blog directory
-const blogPosts = await getCollection('blog');  // Fetch all blog posts from the blog collection
+const blogPosts = await getCollection('blog');
+
+console.log(blogPosts);
 
 // Define the final title and description from props
 const { title, description } = Astro.props;
@@ -16,10 +17,12 @@ const finalDescription = description ?? "";
         {finalDescription && <p class="text-gray-600 dark:text-gray-300 mb-4">{finalDescription}</p>}
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
+            {blogPosts.map((post) => {
+                const imagePath = post.data.image ? `/src/content/blog/${post.slug}/${post.data.image}` : null;
+                return (
                 <article class="bg-white dark:bg-neutral-700 rounded-lg shadow-md overflow-hidden">
                     <img 
-                        src={post.data.image}  // The image import resolves to the correct path
+                        src={imagePath}
                         alt={post.data.title}
                         class="w-full h-48 object-cover"
                     />
@@ -29,7 +32,8 @@ const finalDescription = description ?? "";
                         <a href={post.url} class="mt-4 inline-block text-primary-600 dark:text-primary-400 hover:underline">Read more</a>
                     </div>
                 </article>
-            ))}
+                );
+            })}
         </div>
     </div>
 </section>

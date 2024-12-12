@@ -1,18 +1,21 @@
 ---
-title: "Getting Up to Speed with WebAssembly"
-date: "2023-05-18"
-author: "Mario Guerra"
-description: 'Learn the fundamentals of WebAssembly, its benefits, and how it bridges the gap between web technologies and low-level programming languages for high-performance applications.'
-image: "9410d803-b35b-46c7-bc38-3e08bb89cefb.jpg"
+author: Mario Guerra
 categories:
-  - Technology
+- Technology
+date: '2023-05-18'
+description: Learn the fundamentals of WebAssembly, its benefits, and how it bridges
+  the gap between web technologies and low-level programming languages for high-performance
+  applications.
+image: "web-assembly-title-pic.jpg"
 tags:
-  - "how does web assembly work"
-  - wasm
-  - "web assembly"
-  - webassembly
-  - "what is web assembly"
-  - "what is webassembly"
+- how does web assembly work
+- wasm
+- web assembly
+- webassembly
+- what is web assembly
+- what is webassembly
+title: "Getting Up to Speed with WebAssembly"
+slug: "getting-up-to-speed-with-webassembly"
 ---
 
 WebAssembly has been gaining a lot of attention lately, especially in the world of web development. It’s a binary format designed to be executed in web browsers and offers a number of benefits such as improved performance, cross-platform compatibility, and security.

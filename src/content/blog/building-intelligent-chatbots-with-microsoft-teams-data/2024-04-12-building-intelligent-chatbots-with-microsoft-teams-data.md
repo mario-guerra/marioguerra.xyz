@@ -1,19 +1,22 @@
 ---
-title: "Building Intelligent Chatbots with Microsoft Teams Data"
-date: "2024-04-12"
-author: "Mario Guerra"
-image: Teams-Channel-Data-Export-Title-Pic.jpg
+author: Mario Guerra
 categories:
-  - "Artificial Intelligence"
-  - "Future of Work"
+- Artificial Intelligence
+- Future of Work
+date: '2024-04-12'
+description: This article discusses how to use the Microsoft Graph API to extract
+  data from Teams channels and build a Retrieval-Augmented Generation (RAG) enhanced
+  chatbot to improve productivity and communication.
+image: "Teams-Channel-Data-Export-Title-Pic.jpg"
 tags:
-  - "AI"
-  - "ChatGPT"
-  - "future of work"
-  - "Microsoft Teams"
-  - "RAG"
-  - "retrieval augmented generation"
-description: "This article discusses how to use the Microsoft Graph API to extract data from Teams channels and build a Retrieval-Augmented Generation (RAG) enhanced chatbot to improve productivity and communication."
+- AI
+- ChatGPT
+- future of work
+- Microsoft Teams
+- RAG
+- retrieval augmented generation
+title: "Building Intelligent Chatbots with Microsoft Teams Data"
+slug: "building-intelligent-chatbots-with-microsoft-teams-data"
 ---
 
 ## Introduction

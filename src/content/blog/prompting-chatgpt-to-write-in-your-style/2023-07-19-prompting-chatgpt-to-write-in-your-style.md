@@ -16,7 +16,8 @@ tags:
   - futureofwork
   - workflow
 description: "Learn how to guide ChatGPT to write content that reflects your unique voice and tone through effective prompt techniques and style analysis."
-image: "Summarizing-Documents-with-Azure-OpenAI.jpeg"
+image: "Summarizing-Documents-with-Azure-OpenAI.jpg"
+slug: "prompting-chatgpt-to-write-in-your-style"
 ---
 
 

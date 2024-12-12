@@ -4,6 +4,7 @@ date: "2023-01-05"
 author: "Mario Guerra"
 description: "Advice for transitioning from software engineering to product management."
 image: "hacking-into-product-mgmt.jpg"
+slug: "move-from-software-development-to-product-management"  
 categories:
   - product management
 tags:

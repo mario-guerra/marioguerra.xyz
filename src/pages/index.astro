@@ -1,5 +1,4 @@
 ---
-// Import necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
 import ClientsSection from "@components/sections/landing/ClientsSection.astro";
@@ -10,13 +9,21 @@ import AboutMeSection from "@components/sections/landing/AboutMeSection.astro";
 import heroImage from "@images/mario-chipset.jpg";
 import codeImage from "@images/Code-snippets-scaled.jpg";
 import avatarImage from "@images/mario-avatar-300x300.png";
-const postFiles = await Astro.glob('@content/blog/*.md');
-const posts = postFiles.map(post => ({
-  title: post.frontmatter.title,
-  description: post.frontmatter.description,
-  image: post.frontmatter.image,
-  url: post.url
-}));
+
+const postFiles = await Astro.glob('../content/blog/**/*.md');
+const imageImports = import.meta.glob('../content/blog/**/*.{jpg,png}', { eager: true });
+
+const posts = postFiles.map(post => {
+  const slug = post.frontmatter.slug;
+  const imagePath = post.frontmatter.image ? new URL(`../content/blog/${slug}/${post.frontmatter.image}`, import.meta.url).href : null;
+  return {
+    title: post.frontmatter.title,
+    description: post.frontmatter.description,
+    image: imagePath
+    };
+});
+
+console.log(posts);
 ---
 
 <MainLayout>
@@ -32,19 +39,18 @@ const posts = postFiles.map(post => ({
     alt="Time for an upgrade graphic"
   />
 
-<AboutMeSection slot="about-me"
-  title="About Me"
-  subTitle="With a proven track record in developer productivity, I specialize in bringing innovative tools to life, including TypeSpec at Microsoft. My passion for generative AI and modern build practices drives me to create solutions that bridge the gap between teams and technology. Outside of work, I’m an advocate for continuous learning, fitness, and sharing insights to help others succeed."
-  primaryBtn="Learn More"
-  primaryBtnURL="/about"
-  src={avatarImage}
-  alt="Mario Guerra Portrait"
-/>
-
+  <AboutMeSection slot="about-me"
+    title="About me"
+    subTitle="With a proven track record in developer productivity, I specialize in bringing innovative tools to life, including TypeSpec at Microsoft. My passion for generative AI and modern build practices drives me to create solutions that bridge the gap between teams and technology. Outside of work, I’m an advocate for continuous learning, fitness, and sharing insights to help others succeed."
+    primaryBtn="Learn More"
+    primaryBtnURL="/about"
+    src={avatarImage}
+    alt="Mario Guerra Portrait"
+  />
 
   <!-- Call-to-Action Section -->
   <CTASection slot="call-to-action"
-    title="Let’s Talk About You"
+    title="Let’s talk about you"
     description="How can I help your software project succeed?"
     primaryBtn="Contact Me"
     primaryBtnURL="/contact"

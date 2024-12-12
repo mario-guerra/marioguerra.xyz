@@ -1,21 +1,24 @@
 ---
-title: "The Sliding Content Window: Document Summarization with Azure OpenAI"
-date: "2023-08-22"
-author: "Mario Guerra"
+author: Mario Guerra
 categories:
-  - "Artificial Intelligence"
-  - "Future of Work"
-  - "product management"
-  - "Technology"
+- Artificial Intelligence
+- Future of Work
+- product management
+- Technology
+date: '2023-08-22'
+description: This post introduces a document summarization tool using Azure OpenAI
+  and a sliding content window algorithm to summarize large documents, including various
+  input sources like PDFs and websites.
+image: "Summarizing-Documents-with-Azure-OpenAI.jpg"
 tags:
-  - "becoming a ChatGPT master"
-  - "chatGPT for blog content"
-  - "future of work"
-  - "futureofwork"
-  - "mastering ChatGPT"
-  - "maximizing your ChatGPT experience"
-description: "This post introduces a document summarization tool using Azure OpenAI and a sliding content window algorithm to summarize large documents, including various input sources like PDFs and websites."
-image: Summarizing-Documents-with-Azure-OpenAI.jpeg
+- becoming a ChatGPT master
+- chatGPT for blog content
+- future of work
+- futureofwork
+- mastering ChatGPT
+- maximizing your ChatGPT experience
+title: 'The Sliding Content Window: Document Summarization with Azure OpenAI'
+slug: "ai-document-summarization-with-sliding-content-window"
 ---
 
 Summarizing large documents with current-gen AI models can be challenging, since all are limited to various degrees in how many characters (tokens) they can process in one request.

@@ -1,23 +1,24 @@
 ---
-title: "Unlock the Potential of ChatGPT: Customize Your AI's Responses Like a Pro"
-date: "2023-01-08"
-author: "Mario Guerra"
-description: "How to get the best output out of ChatGPT."
-image: "robot-van-gogh-2.jpg"
+author: Mario Guerra
 categories:
-  - Artificial Intelligence
+- Artificial Intelligence
+date: '2023-01-08'
+description: How to get the best output out of ChatGPT.
+image: "robot-van-gogh-2.jpg"
 tags:
-  - becoming a ChatGPT master
-  - ChatGPT
-  - ChatGPT output fine-tuning beginner's guide
-  - ChatGPT output fine-tuning complete guide
-  - customizing your ChatGPT responses like a pro
-  - Fine-tuning ChatGPT output
-  - mastering ChatGPT
-  - maximizing your ChatGPT experience
-  - the essential guide to ChatGPT output fine-tuning
-  - the expert's guide to ChatGPT output customization
-  - unleashing the full potential of ChatGPT
+- becoming a ChatGPT master
+- ChatGPT
+- ChatGPT output fine-tuning beginner's guide
+- ChatGPT output fine-tuning complete guide
+- customizing your ChatGPT responses like a pro
+- Fine-tuning ChatGPT output
+- mastering ChatGPT
+- maximizing your ChatGPT experience
+- the essential guide to ChatGPT output fine-tuning
+- the expert's guide to ChatGPT output customization
+- unleashing the full potential of ChatGPT
+title: "Unlock the Potential of ChatGPT: Customize Your AI''s Responses Like a Pro"
+slug: "unlock-the-potential-of-chatgpt-customize-your-ais-responses-like-a-pro"
 ---
 
 # Unlock the Potential of ChatGPT: Customize Your AI's Responses Like a Pro
