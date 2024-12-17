@@ -2,8 +2,8 @@
 author: Mario Guerra
 categories:
 - Artificial Intelligence
-date: '2023-01-08'
-description: How to get the best output out of ChatGPT.
+date: "2023-01-08"
+description: "Discover how to harness the full power of ChatGPT with this detailed guide. Learn about its features, practical use cases, and expert tips for effective prompts, fine-tuning settings, and understanding its limitations to unlock its potential for various applications."
 image: "robot-van-gogh-2.jpg"
 tags:
 - becoming a ChatGPT master

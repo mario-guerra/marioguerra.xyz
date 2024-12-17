@@ -1,14 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
-
-const blogPosts = await getCollection('blog');
-
-console.log(blogPosts);
-
-// Define the final title and description from props
-const { title, description } = Astro.props;
+const { posts, title, description } = Astro.props;
 const finalTitle = title ?? "Recent Blog Posts";
 const finalDescription = description ?? "";
+
+// Debugging: Confirm posts array structure and contents
 ---
 
 <section class="py-12 bg-white dark:bg-neutral-800">
@@ -17,23 +12,20 @@ const finalDescription = description ?? "";
         {finalDescription && <p class="text-gray-600 dark:text-gray-300 mb-4">{finalDescription}</p>}
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => {
-                const imagePath = post.data.image ? `/src/content/blog/${post.slug}/${post.data.image}` : null;
-                return (
+            {Array.isArray(posts) && posts.map((post) => (
                 <article class="bg-white dark:bg-neutral-700 rounded-lg shadow-md overflow-hidden">
                     <img 
-                        src={imagePath}
-                        alt={post.data.title}
+                        src={post.image}
+                        alt={post.title}
                         class="w-full h-48 object-cover"
                     />
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{post.data.title}</h3>
-                        <p class="mt-2 text-gray-600 dark:text-gray-300">{post.data.description}</p>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{post.title}</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-300">{post.description}</p>
                         <a href={post.url} class="mt-4 inline-block text-primary-600 dark:text-primary-400 hover:underline">Read more</a>
                     </div>
                 </article>
-                );
-            })}
+            ))}
         </div>
     </div>
 </section>

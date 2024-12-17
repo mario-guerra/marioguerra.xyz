@@ -11,7 +11,6 @@ export default defineConfig({
     },
   },
   site: "https://mario-guerra.github.io",
-  base: '/marioguerra.xyz/',
   prefetch: true,
   integrations: [
     tailwind(),

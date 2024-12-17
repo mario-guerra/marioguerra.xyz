@@ -5,7 +5,7 @@ categories:
 - Future of Work
 - product management
 - Technology
-date: '2023-08-22'
+date: "2023-08-22"
 description: This post introduces a document summarization tool using Azure OpenAI
   and a sliding content window algorithm to summarize large documents, including various
   input sources like PDFs and websites.

@@ -3,7 +3,7 @@ author: Mario Guerra
 categories:
 - Artificial Intelligence
 - Future of Work
-date: '2024-04-12'
+date: "2024-04-12"
 description: This article discusses how to use the Microsoft Graph API to extract
   data from Teams channels and build a Retrieval-Augmented Generation (RAG) enhanced
   chatbot to improve productivity and communication.

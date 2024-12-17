@@ -15,15 +15,17 @@ const imageImports = import.meta.glob('../content/blog/**/*.{jpg,png}', { eager:
 
 const posts = postFiles.map(post => {
   const slug = post.frontmatter.slug;
-  const imagePath = post.frontmatter.image ? new URL(`../content/blog/${slug}/${post.frontmatter.image}`, import.meta.url).href : null;
+  const imagePath = post.frontmatter.image ? `/src/content/blog/${slug}/${post.frontmatter.image}` : null;
   return {
     title: post.frontmatter.title,
     description: post.frontmatter.description,
-    image: imagePath
-    };
+    image: imagePath,
+    date: new Date(post.frontmatter.date)  // Ensure dates are parsed as Date objects
+  };
 });
 
-console.log(posts);
+// Sort posts by date (newest to oldest)
+posts.sort((a, b) => b.date - a.date);
 ---
 
 <MainLayout>
