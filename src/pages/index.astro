@@ -5,27 +5,20 @@ import ClientsSection from "@components/sections/landing/ClientsSection.astro";
 import CTASection from "@components/sections/landing/CTASection.astro";
 import BlogSection from "@components/sections/landing/BlogSection.astro";
 import AboutMeSection from "@components/sections/landing/AboutMeSection.astro";
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
 import heroImage from "@images/mario-chipset.jpg";
 import codeImage from "@images/Code-snippets-scaled.jpg";
 import avatarImage from "@images/mario-avatar-300x300.png";
 
-const postFiles = await Astro.glob('../content/blog/**/*.md');
-const imageImports = import.meta.glob('../content/blog/**/*.{jpg,png}', { eager: true });
+const blogEntries: CollectionEntry<"blog">[] = await getCollection("blog");
 
-const posts = postFiles.map(post => {
-  const slug = post.frontmatter.slug;
-  const imagePath = post.frontmatter.image ? `/src/content/blog/${slug}/${post.frontmatter.image}` : null;
-  return {
-    title: post.frontmatter.title,
-    description: post.frontmatter.description,
-    image: imagePath,
-    date: new Date(post.frontmatter.date)  // Ensure dates are parsed as Date objects
-  };
-});
+const posts = blogEntries.sort(
+  (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+    new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
 
-// Sort posts by date (newest to oldest)
-posts.sort((a, b) => b.date - a.date);
 ---
 
 <MainLayout>
@@ -54,15 +47,13 @@ posts.sort((a, b) => b.date - a.date);
   <CTASection slot="call-to-action"
     title="Let’s talk about you"
     description="How can I help your software project succeed?"
-    primaryBtn="Contact Me"
-    primaryBtnURL="/contact"
-    src={codeImage}
-    alt="Code example"
+    buttonText="Contact Me"
+    buttonLink="/contact"
   />
 
   <!-- Blog Section -->
   <BlogSection slot="blog"
-      posts={posts} 
+      posts={posts}
       title="Recent Articles"
       description="Read my latest insights on software development, productivity, and more." 
   />

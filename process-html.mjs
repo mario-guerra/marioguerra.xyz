@@ -1,10 +1,11 @@
 import fs from 'node:fs/promises'
 import { globby } from 'globby'
 import { minify } from 'html-minifier-terser'
+import path from 'node:path'
 
 // Get all HTML files from the output directory
-const path = './.vercel/output/static'
-const files = await globby(`${path}/**/*.html`)
+const outputDir = path.join(process.cwd(),'dist');
+const files = await globby(`${outputDir}/**/*.html`);
 
 await Promise.all(
     files.map(async (file) => {
@@ -16,7 +17,7 @@ await Promise.all(
    		 removeComments: true,
    		 preserveLineBreaks: true,
    		 collapseWhitespace: true,
-		 minifyJS: true
+         minifyJS: true
    	 })
    	 await fs.writeFile(file, html)
     })

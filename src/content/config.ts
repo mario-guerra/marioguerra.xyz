@@ -71,6 +71,8 @@ const blogCollection = defineCollection({
       title: z.string(),                           // Blog post title
       description: z.string(),                    // Blog post description
       author: z.string(),                         // Author's name
+      authorImage: image().optional(),
+      authorImageAlt: z.string().optional(),
       date: z.string().transform((str) => new Date(str)), // Convert string to Date object
       image: z.string().refine((value) => value.endsWith('.jpg') || value.endsWith('.png') || value.endsWith('.jpeg'), {
         message: "Image must be a .jpg or .png file",

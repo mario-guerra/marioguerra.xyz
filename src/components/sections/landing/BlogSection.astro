@@ -1,9 +1,16 @@
 ---
+import type { CollectionEntry } from 'astro:content';
+
 const { posts, title, description } = Astro.props;
+
+interface Props {
+   posts: CollectionEntry<"blog">[],
+   title: string;
+   description?:string
+}
+
 const finalTitle = title ?? "Recent Blog Posts";
 const finalDescription = description ?? "";
-
-// Debugging: Confirm posts array structure and contents
 ---
 
 <section class="py-12 bg-white dark:bg-neutral-800">
@@ -12,17 +19,17 @@ const finalDescription = description ?? "";
         {finalDescription && <p class="text-gray-600 dark:text-gray-300 mb-4">{finalDescription}</p>}
         
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {Array.isArray(posts) && posts.map((post) => (
+            {Array.isArray(posts) && posts.map((blogEntry) => (
                 <article class="bg-white dark:bg-neutral-700 rounded-lg shadow-md overflow-hidden">
                     <img 
-                        src={post.image}
-                        alt={post.title}
+                        src={`/src/content/blog/${blogEntry.slug}/${blogEntry.data.image}`}
+                        alt={blogEntry.data.title}
                         class="w-full h-48 object-cover"
                     />
                     <div class="p-6">
-                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{post.title}</h3>
-                        <p class="mt-2 text-gray-600 dark:text-gray-300">{post.description}</p>
-                        <a href={post.url} class="mt-4 inline-block text-primary-600 dark:text-primary-400 hover:underline">Read more</a>
+                        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">{blogEntry.data.title}</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-300">{blogEntry.data.description}</p>
+                        <a href={`/blog/${blogEntry.slug}`} class="mt-4 inline-block text-primary-600 dark:text-primary-400 hover:underline">Read more</a>
                     </div>
                 </article>
             ))}
