@@ -16,7 +16,7 @@ tags:
   - futureofwork
   - workflow
 description: "Learn how to maximize the potential of ChatGPT with this comprehensive guide. Discover its capabilities, practical applications, and tips for crafting effective prompts, fine-tuning responses, and understanding its limits to make the most of this powerful AI tool."
-image: "Robot-author.png"
+image: "./Robot-author.png"
 slug: "prompting-chatgpt-to-write-in-your-style"
 ---
 

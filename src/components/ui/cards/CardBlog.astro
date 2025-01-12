@@ -9,8 +9,8 @@ const { blogEntry } = Astro.props;
 ---
 
 <a
+  href={`/blog/${blogEntry.slug}`}
   class="group relative block rounded-xl outline-none ring-zinc-500 transition duration-500 focus-visible:ring dark:ring-zinc-200 dark:focus:outline-none"
-  href={`/blog/${blogEntry.id.replace(/^en\//, "")}/`}
   data-astro-prefetch
 >
   <div
@@ -20,9 +20,8 @@ const { blogEntry } = Astro.props;
       class="absolute start-0 top-0 size-full object-cover transition duration-500 group-hover:scale-110"
       src={blogEntry.data.image}
       alt={`Image for ${blogEntry.data.title}`}
-      draggable={"false"}
-      loading={"eager"}
-      format={"avif"}
+      draggable={false}
+      loading="eager"
     />
   </div>
   <div class="absolute inset-x-0 top-0 z-10">

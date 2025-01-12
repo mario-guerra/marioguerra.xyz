@@ -15,9 +15,8 @@ const { blogEntry } = Astro.props;
         class="absolute start-0 top-0 size-full rounded-xl object-cover"
         src={blogEntry.data.image}
         alt={`Image for ${blogEntry.data.title}`}
-        draggable={"false"}
-        loading={"eager"}
-        format={"avif"}
+        draggable={false}
+        loading="eager"
       />
     </div>
   </div>
@@ -27,7 +26,6 @@ const { blogEntry } = Astro.props;
     >
       <a
         class="outline-none ring-zinc-500 transition duration-300 hover:text-orange-400 focus-visible:ring dark:text-neutral-300 dark:ring-zinc-200 dark:hover:text-neutral-50 dark:focus:outline-none"
-        href={`/blog/${blogEntry.id.replace(/^en\//, "")}/`}
       >
         {blogEntry.data.title}
       </a>
@@ -46,7 +44,7 @@ const { blogEntry } = Astro.props;
     </div>
     <div class="mt-5">
       <PrimaryCTA
-        url={`/blog/${blogEntry.id.replace(/^en\//, "")}/`}
+        url={`/blog/${blogEntry.slug}`}
         title="Read More"
         data-astro-prefetch
       />

@@ -3,7 +3,7 @@ title: "Finding Remote Work in the 2020s"
 date: "2021-06-02"
 author: "Mario Guerra"
 description: "Explore the challenges and strategies for securing a remote job in the 2020s, including optimizing your resume for ATS, building a personal brand, and preparing for interviews—all based on lessons learned during a career pivot."
-image: "hiring-1977803_1280-1024x767.jpg"
+image: "./hiring-1977803_1280-1024x767.jpg"
 categories:
   - "Future of Work"
 tags:

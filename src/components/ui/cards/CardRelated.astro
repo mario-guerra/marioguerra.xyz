@@ -23,11 +23,9 @@ interface Props {
     <Image
     class="size-[46px] rounded-full border-2 border-neutral-50"
     src={blogEntry.data.image}
-    alt={blogEntry.data.description}
+    alt={`Image for ${blogEntry.data.title}`}
     draggable={"false"}
-    width={46}
-    height={46}
-    inferSize={false}
+    loading={"eager"}
   />
     <!-- The title of the blog post -->
     <h3

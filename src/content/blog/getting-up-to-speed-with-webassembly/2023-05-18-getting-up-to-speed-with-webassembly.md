@@ -6,7 +6,7 @@ date: '2023-05-18'
 description: Learn the fundamentals of WebAssembly, its benefits, and how it bridges
   the gap between web technologies and low-level programming languages for high-performance
   applications.
-image: "web-assembly-title-pic.jpg"
+image: "./web-assembly-title-pic.jpg"
 tags:
 - how does web assembly work
 - wasm

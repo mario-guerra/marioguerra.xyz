@@ -3,7 +3,7 @@ title: "Hacking Your Way into Product Management: A Software Developer’s Guide
 date: "2023-01-05"
 author: "Mario Guerra"
 description: "Explore the transition from software development to product management with this guide tailored for developers. Learn the key skills, advantages, and preparation steps for making a successful career switch, and discover if product management aligns with your passion for strategic thinking and customer-focused problem-solving."
-image: "hacking-into-product-mgmt.jpg"
+image: "./hacking-into-product-mgmt.jpg"
 slug: "move-from-software-development-to-product-management"  
 categories:
   - product management

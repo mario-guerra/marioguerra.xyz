@@ -7,7 +7,7 @@ date: "2024-04-12"
 description: This article discusses how to use the Microsoft Graph API to extract
   data from Teams channels and build a Retrieval-Augmented Generation (RAG) enhanced
   chatbot to improve productivity and communication.
-image: "Teams-Channel-Data-Export-Title-Pic.jpg"
+image: "./Teams-Channel-Data-Export-Title-Pic.jpg"
 tags:
 - AI
 - ChatGPT
@@ -50,7 +50,7 @@ Follow these steps to obtain the group id and channel id:
 3. Paste the copied link into a text editor. The link will be in the format `https://teams.microsoft.com/l/channel/&lt;channel_id&gt;/&lt;channel_name&gt;?groupId=&lt;group_id&gt;&amp;tenantId=&lt;tenant_id&gt;`.
 4. Extract the `group_id` and `channel_id` from the link.
 
-![Teams Channel Link](https://marioguerra.xyz/wp-content/uploads/2024/04/Teams-Channel-Get-Link-300x187.jpg)
+![Teams Channel Link](./Teams-Channel-Get-Link.jpg)
 
 Once these values are obtained, they should be added to the .env file in the same directory as the script. The .env file should contain the following lines, replacing `&lt;group_id&gt;` and `&lt;channel_id&gt;` with the actual values:
 
@@ -67,7 +67,7 @@ You can get an access token by logging into the Microsoft Graph Explorer at http
 
 It’s important to note that these tokens have a short lifespan, measured in hours, so be prepared to regenerate them often by reloading the Graph Explorer UI.
 
-![Graph Explorer](https://marioguerra.xyz/wp-content/uploads/2024/04/Graph-Explorer-Get-Access-Token-300x220.jpg)
+![Graph Explorer](./Graph-Explorer-Get-Access-Token.jpg)
 
 Once the access token is obtained, users need to replace the values in the .env file with their actual ACCESS_TOKEN, GROUP_ID, and CHANNEL_ID, and save the .env file in the same directory as the script.
 
