@@ -1,32 +1,68 @@
 ---
-// Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
-import ContactSection from "@components/sections/misc/ContactSection.astro";
+import EmailContactInput from "@components/ui/forms/input/EmailContactInput.astro";
+import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
+import TextInput from "@components/ui/forms/input/TextInput.astro";
+import FormSubmitButton from "@components/ui/buttons/FormSubmitButton.astro";
 import { SITE } from "@data/constants";
+import { Image } from "astro:assets";
+import avatarImage from "@images/mario-avatar-300x300.png";
 
-const pageTitle: string = `Contact | ${SITE.title}`;
+const pageTitle = `Contact | ${SITE.title}`;
 ---
 
-<!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
-<MainLayout
-  title={pageTitle}
-  structuredData={{
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "@id": "https://screwfast.uk/contact",
-    "url": "https://screwfast.uk/contact",
-    "name": "Contact Us | ScrewFast",
-    "description":
-      "Have questions or want to discuss a project? Reach out, and let's craft the perfect solution with our tools and services.",
-    "isPartOf": {
-      "@type": "WebSite",
-      "url": "https://screwfast.uk",
-      "name": "ScrewFast",
-      "description":
-        "ScrewFast offers top-tier hardware tools and expert construction services to meet all your project needs.",
-    },
-    "inLanguage": "en-US"
-  }}
->
-  <ContactSection />
+<MainLayout title={pageTitle}>
+  <section
+    slot="blog"
+    class="mx-auto max-w-3xl px-1 pb-1 pt-1 sm:px-1 lg:px-1 lg:pt-1 flex flex-col sm:flex-row items-start"
+  >
+  <div class="w-full sm:w-1/4 sm:pr-6 mb-4 sm:mb-0 flex justify-center sm:block ">
+    <div class="top-12 overflow-hidden w-1/2 sm:w-full">
+        <Image
+            src={avatarImage}
+            alt="Mario Guerra Portrait"
+             class="h-full w-full object-cover object-center rounded-full"
+            draggable={"false"}
+            loading={"eager"}
+            format={"avif"}
+            />
+       </div>
+    </div>
+    <div class="w-full sm:w-3/4">
+      <h1 class="text-3xl font-bold text-neutral-800 dark:text-neutral-200">Let's talk.</h1>
+        <p class="text-neutral-700 dark:text-neutral-400">
+          I'm available for consulting on a limited basis, with an emphasis on applications involving generative AI.
+        </p>
+        <p class="text-neutral-700 dark:text-neutral-400">
+          Take a look at my <a href="/services" class="text-primary-600 dark:text-primary-400 hover:underline">Services</a> page for more info.
+        </p>
+        <p class="text-neutral-700 dark:text-neutral-400">
+          Please provide details about your project needs and the best way to reach you. How can I help your software project succeed?
+        </p>
+    
+      <form
+        method="POST"
+        action="https://submit-form.com/X2aGOKKt9"
+        class="mt-8"
+      >
+        <input type="hidden" name="_honey" style="display:none" />
+        <TextInput label="Name" name="name" required />
+        <EmailContactInput label="Email" name="email" required />
+        <TextAreaInput label="Comment or Message" name="message" required rows={5} />
+         <div class="mt-4 flex items-center justify-between">
+          <div class="flex items-center">
+            <input type="checkbox" id="human" name="human" class="mr-2" required/>
+            <label for="human" class="text-neutral-700 dark:text-neutral-400">I am human</label>
+           </div>
+           <a href="#" class="text-gray-500 underline">
+               hCaptcha
+            Privacy - Terms
+            </a>
+         </div>
+        <div class="mt-6">
+          <FormSubmitButton title="Submit" type="submit"/>
+        </div>
+    </form>
+    </div>
+  </section>
 </MainLayout>

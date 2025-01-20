@@ -14,11 +14,13 @@ import avatarImage from "@images/mario-avatar-300x300.png";
 
 const blogEntries: CollectionEntry<"blog">[] = await getCollection("blog");
 
-const posts = blogEntries.sort(
-  (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
-    new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+// Sort posts by date
+const sortedPosts: CollectionEntry<"blog">[] = blogEntries.sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
 );
 
+// Limit to 3 posts
+const recentPosts: CollectionEntry<"blog">[] = sortedPosts.slice(0, 3);
 ---
 
 <MainLayout>
@@ -27,9 +29,9 @@ const posts = blogEntries.sort(
     title="It's time for an upgrade"
     subTitle="Hi, I’m Mario Guerra, Product Manager for TypeSpec at Microsoft. I create tools and frameworks that empower developers to build faster, smarter, and more effectively."
     primaryBtn="Learn More"
-    primaryBtnURL="/about"
+    primaryBtnURL="/marioguerra.xyz/about"
     secondaryBtn="Contact Me"
-    secondaryBtnURL="/contact"
+    secondaryBtnURL="/marioguerra.xyz/contact"
     src={heroImage}
     alt="Time for an upgrade graphic"
   />
@@ -38,7 +40,7 @@ const posts = blogEntries.sort(
     title="About me"
     subTitle="With a proven track record in developer productivity, I specialize in bringing innovative tools to life, including TypeSpec at Microsoft. My passion for generative AI and modern build practices drives me to create solutions that bridge the gap between teams and technology. Outside of work, I’m an advocate for continuous learning, fitness, and sharing insights to help others succeed."
     primaryBtn="Learn More"
-    primaryBtnURL="/about"
+    primaryBtnURL="/marioguerra.xyz/about"
     src={avatarImage}
     alt="Mario Guerra Portrait"
   />
@@ -52,9 +54,11 @@ const posts = blogEntries.sort(
   />
 
   <!-- Blog Section -->
-  <BlogSection slot="blog"
-      posts={posts}
-      title="Recent Articles"
-      description="Read my latest insights on software development, productivity, and more." 
-  />
+    <BlogSection slot="blog"
+        posts={recentPosts}
+        title="Recent Articles"
+        description="Read my latest insights on software development, productivity, and more."
+        viewAllText="Read More"
+        viewAllLink="/blog"
+    />
 </MainLayout>

@@ -1,17 +1,22 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
-
-const { posts, title, description } = Astro.props;
+import PrimaryCTA from "@components/ui/buttons/PrimaryCTA.astro";
 
 interface Props {
-   posts: CollectionEntry<"blog">[],
-   title: string;
-   description?: string;
+  posts: CollectionEntry<"blog">[],
+  title: string;
+  description?: string;
+  viewAllText?: string;
+  viewAllLink?: string;
 }
+
+const { posts, title, description, viewAllText, viewAllLink } = Astro.props;
 
 const finalTitle = title ?? "Recent Blog Posts";
 const finalDescription = description ?? "";
+const finalViewAllText = viewAllText ?? "View All Articles";
+const finalViewAllLink = viewAllLink ?? "/blog";
 ---
 
 <section class="py-12 bg-white dark:bg-neutral-800">
@@ -36,5 +41,11 @@ const finalDescription = description ?? "";
         </article>
       ))}
     </div>
+
+      {viewAllLink && (
+        <div class="flex justify-center mt-8">
+          <PrimaryCTA title={finalViewAllText} url={finalViewAllLink} />
+        </div>
+      )}
   </div>
 </section>

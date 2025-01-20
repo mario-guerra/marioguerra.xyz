@@ -1,15 +1,14 @@
 ---
 import Icon from "@components/ui/icons/Icon.astro";
-// Destructure the properties from Astro.props
-const { title, url, noArrow, type } = Astro.props;
-// Define TypeScript interface for the properties
+
 interface Props {
-  title?: string;
-  url?: string;
-  noArrow?: boolean;
-  type?: string;
+    title: string;
+    type?: 'submit' | 'button' | 'reset';
+    noArrow?: boolean;
 }
-// Define CSS classes for styling the button
+
+const { title, type, noArrow } = Astro.props;
+
 const baseClasses =
   "group inline-flex items-center justify-center gap-x-2 rounded-lg px-4 py-3 text-sm font-bold text-neutral-50 ring-zinc-500 transition duration-300 focus-visible:ring outline-none";
 const borderClasses = "border border-transparent";
@@ -19,15 +18,10 @@ const disableClasses = "disabled:pointer-events-none disabled:opacity-50";
 const fontSizeClasses = "2xl:text-base";
 const ringClasses = "dark:ring-zinc-200";
 ---
-
-<!-- Link styled as a button, with dynamic title, URL, and optional arrow -->
-<a
-  class={`${baseClasses} ${borderClasses} ${bgColorClasses} ${disableClasses} ${fontSizeClasses} ${ringClasses}`}
-  href={url}
+<button
     type={type}
+    class={`${baseClasses} ${borderClasses} ${bgColorClasses} ${disableClasses} ${fontSizeClasses} ${ringClasses}`}
 >
-  {title}
-  <!-- Display the arrow based on the 'noArrow' property -->
-
-  {noArrow ? null : <Icon name="arrowRight" />}
-</a>
+    {title}
+    {noArrow ? null : <Icon name="arrowRight" />}
+</button>
